@@ -1,9 +1,11 @@
 #include "stdafx.h"
 #include "Game.h"
+#include "Player.h"
 #include "tkEngine/light/tkDirectionLight.h"
 
 Game::Game()
 {
+	NewGO<Player>(0, "player");
 }
 
 
@@ -18,8 +20,7 @@ bool Game::Start()
 	MainCamera().SetFar(10000.0f);
 	MainCamera().SetPosition({ 0.0f, 70.0f, 200.0f });
 	MainCamera().Update();
-	m_skinModelRender = NewGO<prefab::CSkinModelRender>(0);
-	m_skinModelRender->Init(L"modelData/unityChan.cmo");
+	
 	
 	return true;
 }
