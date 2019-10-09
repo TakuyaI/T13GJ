@@ -3,6 +3,7 @@
 #include "tkEngine/physics/tkPhysicsGhostObject.h"
 #include "tkEngine/character/tkCharacterController.h"
 class Gun;
+class EnemyGun;
 class Player;
 class Enemy;
 class BackGround;
@@ -16,7 +17,8 @@ public:
 	void Update();
 	void PostRender(CRenderContext& rc)override;
 
-	Gun* m_gun[2] = { nullptr };
+	Gun* m_gun;
+	EnemyGun* m_eg;
 	Player* m_player;
 	Enemy* m_enemy;
 	BackGround* m_bg;

@@ -3,6 +3,7 @@
 #include "Player.h"
 #include "BackGround.h"
 #include "Enemy.h"
+#include "EnemyGun.h"
 #include "GameCamera.h"
 #include "Gun.h"
 #include "Result.h"
@@ -14,7 +15,8 @@ Game::Game()
 	m_bg = NewGO<BackGround>(0, "background");
 	m_enemy = NewGO<Enemy>(0, "enemy");
 	m_gc = NewGO<GameCamera>(0, "gamecamera");
-	m_gun[0] = NewGO<Gun>(0, "gun");
+	m_gun = NewGO<Gun>(0, "gun");
+	m_eg = NewGO<EnemyGun>(0, "enemygun");
 	
 }
 
@@ -25,11 +27,9 @@ Game::~Game()
 	DeleteGO(m_bg);
 	DeleteGO(m_enemy);
 	DeleteGO(m_gc);
-	QueryGOs<Gun>("gun", [](Gun * gun)->bool
-		{
-			DeleteGO(gun);
-			return true;
-		});
+	DeleteGO(m_gun);
+	DeleteGO(m_eg);
+		
 }
 bool Game::Start()
 {
