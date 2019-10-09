@@ -54,8 +54,7 @@
     <MeshContentTask Include="Assets\modelData\r.FBX">
       <Filter>Assets\modelData</Filter>
     </MeshContentTask>
-    <MeshContentTask Include="Assets\modelData\raiful.fbx">
-      <Filter>Assets\modelData</Filter>
+    <MeshContentTask Include="Assets\modelData\raiful.fbx">    <MeshContentTask Include="Assets\modelData\r2.FBX" />      <Filter>Assets\modelData</Filter>
     </MeshContentTask>
   </ItemGroup>
   <ItemGroup>

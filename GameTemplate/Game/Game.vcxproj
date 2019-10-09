@@ -1808,8 +1808,8 @@
       <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug_Low|x64'">false</ExcludedFromBuild>
     </MeshContentTask>
     <MeshContentTask Include="Assets\modelData\r.FBX" />
-    <MeshContentTask Include="Assets\modelData\raiful.fbx" />
-    <MeshContentTask Include="Assets\modelData\unityChan.fbx" />
+
+    <MeshContentTask Include="Assets\modelData\r2.FBX" />    <MeshContentTask Include="Assets\modelData\raiful.fbx" />    <MeshContentTask Include="Assets\modelData\unityChan.fbx" />
   </ItemGroup>
   <ItemGroup>
     <ImageContentTask Include="Assets\sprite\dummy.png" />
