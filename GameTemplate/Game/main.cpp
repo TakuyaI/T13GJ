@@ -4,7 +4,7 @@
 #include "stdafx.h"
 #include "Game.h"
 #include "Title.h"
-
+#include "result.h"
 namespace {
 	/*!
 	*@brief	低スペックPC向けにtkEngineのConfigを設定する。
@@ -136,7 +136,8 @@ int WINAPI wWinMain(HINSTANCE hInstance, HINSTANCE hPrevInstance, LPWSTR lpCmdLi
 
 	//エンジンを初期化。
 	if (Engine().Init(initParam) == true) {
-		NewGO<Title>(1, "title");
+		//NewGO<Title>(1, "title");
+		NewGO< Result>(0);
 		//ゲームループを実行。
 		Engine().RunGameLoop();
 	}

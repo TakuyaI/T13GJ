@@ -11,5 +11,7 @@ public:
 
 	prefab::CSpriteRender* m_spriteModelRender = nullptr;
 	CFont m_fontTest;
+	CVector4 Color = {1.0f, 1.0f, 1.0f, 1.0f};
+	int flag = 0;
 };
 
