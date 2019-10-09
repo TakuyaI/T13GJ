@@ -1,11 +1,13 @@
 #include "stdafx.h"
 #include "Game.h"
 #include "Player.h"
+#include "BackGround.h"
 #include "tkEngine/light/tkDirectionLight.h"
 
 Game::Game()
 {
 	NewGO<Player>(0, "player");
+	NewGO<BackGround>(0, "background");
 }
 
 
@@ -27,4 +29,5 @@ bool Game::Start()
 
 void Game::Update()
 {
+
 }
