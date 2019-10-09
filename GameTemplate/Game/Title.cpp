@@ -15,7 +15,7 @@ Title::~Title()
 bool Title::Start() 
 {
 	m_spriteModelRender = NewGO<prefab::CSpriteRender>(0);
-	m_spriteModelRender->Init(L"sprite/title.dds",1300.0f, 1000.0f);
+	m_spriteModelRender->Init(L"sprite/Title.dds",1300.0f, 1000.0f);
 	
 	return true;
 }
