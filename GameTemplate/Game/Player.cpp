@@ -9,6 +9,7 @@ Player::Player()
 
 Player::~Player()
 {
+	DeleteGO(m_skinModelRender);
 }
 
 bool Player::Start()
@@ -16,6 +17,8 @@ bool Player::Start()
 	m_skinModelRender = NewGO<prefab::CSkinModelRender>(0);
 	m_skinModelRender->Init(L"modelData/unityChan.cmo");
 
+	m_position.z = -800.0f;
+	m_skinModelRender->SetPosition(m_position);
 	m_charaCon.Init(50.0f, 100.0f, m_position);
 
 	return true;
