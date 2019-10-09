@@ -23,6 +23,7 @@
     <ClCompile Include="Player.cpp" />
     <ClCompile Include="Enemy.cpp" />
     <ClCompile Include="BackGround.cpp" />
+    <ClCompile Include="GameCamera.cpp" />
   </ItemGroup>
   <ItemGroup>
     <CLInclude Include="resource.h">
@@ -34,6 +35,7 @@
     <ClInclude Include="Player.h" />
     <ClInclude Include="Enemy.h" />
     <ClInclude Include="BackGround.h" />
+    <ClInclude Include="GameCamera.h" />
   </ItemGroup>
   <ItemGroup>
     <ResourceCompile Include="Game.rc">
@@ -52,10 +54,6 @@
     <ImageContentTask Include="Assets\sprite\dummy.png">
       <Filter>Assets\sprite</Filter>
     </ImageContentTask>
-  </ItemGroup>
-  <ItemGroup>
-    <Image Include="Assets\sprite\title.png">
-      <Filter>Assets\sprite</Filter>
-    </Image>
+    <ImageContentTask Include="Assets\sprite\title.png" />
   </ItemGroup>
 </Project>
