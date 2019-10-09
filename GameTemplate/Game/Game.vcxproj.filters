@@ -2,7 +2,9 @@
 <Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <ItemGroup>
     <ImageContentTask Include="Assets\sprite\dummy.png" />
-    <ImageContentTask Include="Assets\sprite\title.png" />
+    <ImageContentTask Include="Assets\sprite\title.png">
+      <Filter>Assets\sprite</Filter>
+    </ImageContentTask>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="BackGround.cpp" />
@@ -19,13 +21,13 @@
     <MeshContentTask Include="Assets\modelData\background.fbx">
       <Filter>Assets\modelData</Filter>
     </MeshContentTask>
-    <MeshContentTask Include="Assets\modelData\raiful.fbx">
+    <MeshContentTask Include="Assets\modelData\r.FBX">
       <Filter>Assets\modelData</Filter>
     </MeshContentTask>
     <MeshContentTask Include="Assets\modelData\r2.FBX">
       <Filter>Assets\modelData</Filter>
     </MeshContentTask>
-    <MeshContentTask Include="Assets\modelData\r.FBX">
+    <MeshContentTask Include="Assets\modelData\raiful.fbx">
       <Filter>Assets\modelData</Filter>
     </MeshContentTask>
     <MeshContentTask Include="Assets\modelData\unityChan.fbx">
@@ -48,10 +50,13 @@
   </ItemGroup>
   <ItemGroup>
     <Filter Include="Assets">
-      <UniqueIdentifier>{2370ea89-306b-47bd-bc13-4d672f8f23a6}</UniqueIdentifier>
+      <UniqueIdentifier>{15386cad-6aec-41cc-817e-9356dba4e49f}</UniqueIdentifier>
     </Filter>
     <Filter Include="Assets\modelData">
-      <UniqueIdentifier>{6ef36937-7c9b-493b-9665-c11b322d852b}</UniqueIdentifier>
+      <UniqueIdentifier>{82772b6f-fdc2-4fa8-9e5e-8e2e9706cdeb}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Assets\sprite">
+      <UniqueIdentifier>{d32074b3-7ead-46e6-9bdb-2dc5a2dc977a}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
 </Project>
