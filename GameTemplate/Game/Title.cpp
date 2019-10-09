@@ -15,7 +15,7 @@ Title::~Title()
 bool Title::Start() 
 {
 	m_spriteModelRender = NewGO<prefab::CSpriteRender>(0);
-	m_spriteModelRender->Init(L"sprite/Title.dds",1300.0f, 1000.0f);
+	m_spriteModelRender->Init(L"sprite/mizugassen.dds",1300.0f, 750.0f);
 	
 	return true;
 }
@@ -41,10 +41,10 @@ void Title::PostRender(CRenderContext& rc)
 	m_fontTest.Begin(rc);
 	m_fontTest.Draw(
 		text,
-		{ 465.0f, 340.0f },
+		{ 200.0f, -175.0f },
 		{ 1.0f, 0.0f, 0.0f, 1.0f },
 		0.0f,
-		0.8f,
+		1.8f,
 		{ 0.0f, 1.0f }
 	);
 	m_fontTest.End(rc);
