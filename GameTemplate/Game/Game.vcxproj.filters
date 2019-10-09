@@ -10,7 +10,6 @@
     <ImageContentTask Include="Assets\sprite\dummy.png">
       <Filter>Assets\sprite</Filter>
     </ImageContentTask>
-    <ImageContentTask Include="..\..\..\長野友哉\reslut.jpg" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="BackGround.cpp" />

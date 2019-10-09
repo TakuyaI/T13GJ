@@ -31,6 +31,7 @@ void Player::Update()
 
 	m_skinModelRender->SetPosition(m_position);
 
+
 	m_timer++;
 	if (Pad(0).IsPress(enButtonB) && m_timer >= 10) {
 		m_bullet = NewGO<Bullet>(0, "bullet");

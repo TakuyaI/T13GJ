@@ -80,6 +80,6 @@ void Enemy::Attack()
 }
 void Enemy::Update()
 {
-	Move();
+	//Move();
 
 }
