@@ -14,5 +14,6 @@ public:
 	CVector3 m_position = CVector3::Zero;
 	CVector3 m_target = CVector3::Zero;
 	CVector3 m_toCameraPos = CVector3::Zero;
+	CVector3 m_toTargetPos = CVector3::Zero;
 };
 
