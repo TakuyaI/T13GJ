@@ -21,9 +21,13 @@ bool Title::Start()
 
 void Title::Update()
 {
-	if (Pad(0).IsTrigger(enButtonA))
+	if (Pad(0).IsPress(enButtonA))
 	{
 		NewGO<Game>(0);
+		
+		prefab::CSoundSource* sound = NewGO<prefab::CSoundSource>(0);
+		sound->Init( L"sound/saezuri.wav");
+		sound->Play(false);
 		DeleteGO(this);
 	}
 

@@ -3,6 +3,8 @@
 #include "Player.h"
 #include "BackGround.h"
 #include "Enemy.h"
+#include "GameCamera.h"
+#include "Gun.h"
 #include "tkEngine/light/tkDirectionLight.h"
 
 Game::Game()
@@ -10,6 +12,8 @@ Game::Game()
 	NewGO<Player>(0, "player");
 	NewGO<BackGround>(0, "background");
 	NewGO<Enemy>(0, "enemy");
+	NewGO<GameCamera>(0, "gamecamera");
+	NewGO<Gun>(0, "gun");
 }
 
 
