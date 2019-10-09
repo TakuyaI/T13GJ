@@ -24,6 +24,7 @@
     <ClCompile Include="Enemy.cpp" />
     <ClCompile Include="BackGround.cpp" />
     <ClCompile Include="GameCamera.cpp" />
+    <ClCompile Include="Gun.cpp" />
   </ItemGroup>
   <ItemGroup>
     <CLInclude Include="resource.h">
@@ -36,6 +37,7 @@
     <ClInclude Include="Enemy.h" />
     <ClInclude Include="BackGround.h" />
     <ClInclude Include="GameCamera.h" />
+    <ClInclude Include="Gun.h" />
   </ItemGroup>
   <ItemGroup>
     <ResourceCompile Include="Game.rc">
@@ -50,6 +52,9 @@
       <Filter>Assets\modelData</Filter>
     </MeshContentTask>
     <MeshContentTask Include="Assets\modelData\r.FBX">
+      <Filter>Assets\modelData</Filter>
+    </MeshContentTask>
+    <MeshContentTask Include="Assets\modelData\raiful.fbx">
       <Filter>Assets\modelData</Filter>
     </MeshContentTask>
   </ItemGroup>

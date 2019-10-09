@@ -24,8 +24,8 @@ bool Player::Start()
 void Player::Update()
 {
 
-	m_moveSpeed.x = Pad(0).GetLStickXF() * 200.0f;
-	m_moveSpeed.z = Pad(0).GetLStickYF() * 200.0f;
+	m_moveSpeed.x = Pad(0).GetLStickXF() * 400.0f;
+	m_moveSpeed.z = Pad(0).GetLStickYF() * 400.0f;
 
 	m_position = m_charaCon.Execute(m_moveSpeed);
 
