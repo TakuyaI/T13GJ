@@ -14,13 +14,17 @@ public:
 	~Game();
 	bool Start();
 	void Update();
-	
+	void PostRender(CRenderContext& rc)override;
+
 	Gun* m_gun[2] = { nullptr };
 	Player* m_player;
 	Enemy* m_enemy;
 	BackGround* m_bg;
 	GameCamera* m_gc;
 
+	CFont m_font;
 	int m_timer = 0;
+	int m_fontTiner = 10;
+	
 };
 

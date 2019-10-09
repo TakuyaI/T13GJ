@@ -47,8 +47,29 @@ bool Game::Start()
 void Game::Update()
 {
 	m_timer++;
-	if (m_timer == 180) {
+	if (m_timer == 60) {
+		m_fontTiner--;
+		m_timer = 0;
+	}
+	if (m_fontTiner < 0) {
 		NewGO<Result>(0, "result");
 			DeleteGO(this);
 	}
+}
+
+void Game::PostRender(CRenderContext& rc)
+{
+	
+	wchar_t text[256];
+	swprintf_s(text, L"%d", m_fontTiner);
+	m_font.Begin(rc);
+	m_font.Draw(
+		text,
+		{ 200.0f, -175.0f },
+		{0.0f, 0.0f, 0.0f, 1.0f},
+		0.0f,
+		1.8f,
+		{ 0.0f, 1.0f }
+	);
+	m_font.End(rc);
 }
