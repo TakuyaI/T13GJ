@@ -25,5 +25,6 @@ public:
 	CVector3 m_moveSpeed = CVector3::Zero;
 
 	int m_timer = 0;
+	
 };
 

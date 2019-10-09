@@ -7,6 +7,7 @@
 #include "GameCamera.h"
 #include "Gun.h"
 #include "Result.h"
+#include "Bullet.h"
 #include "tkEngine/light/tkDirectionLight.h"
 
 Game::Game()
@@ -76,6 +77,16 @@ void Game::PostRender(CRenderContext& rc)
 	m_font.Draw(
 		text,
 		{ 400.0f, 250.0f },
+		{ 0.0f, 0.0f, 0.0f, 1.0f },
+		0.0f,
+		1.0f,
+		{ 0.0f, 1.0f }
+	);
+
+	swprintf_s(text, L"íeêî%d", m_playerBullet);
+	m_font.Draw(
+		text,
+		{ 400.0f, 200.0f },
 		{ 0.0f, 0.0f, 0.0f, 1.0f },
 		0.0f,
 		1.0f,

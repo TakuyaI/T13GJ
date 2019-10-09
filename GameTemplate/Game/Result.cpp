@@ -25,7 +25,7 @@ bool Result::Start()
 void Result::Update()
 {
 	if (m_position.x <= 800.0f){
-		m_position.x -= 1.0f;
+		m_position.x -= 10.0f;
 	}
 	if (m_position.x <= 300.0f) {
 		m_position.x = 300.0f;
