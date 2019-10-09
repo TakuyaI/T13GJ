@@ -28,7 +28,4 @@ void Gun::Update()
 	m_position.z += 100.0f;
 	m_skinmodelRender->SetPosition(m_position);
 
-	if (Pad(0).IsPress(enButtonB)) {
-		NewGO<Bullet>(0, "bullet");
-	}
 }

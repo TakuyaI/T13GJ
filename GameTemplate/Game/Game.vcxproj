@@ -1827,9 +1827,6 @@
     <ImageContentTask Include="Assets\sprite\mizugassen.jpg" />
   </ItemGroup>
   <ItemGroup>
-    <ImageContentTask Include="..\..\..\長野友哉\reslut.jpg" />
-  </ItemGroup>
-  <ItemGroup>
     <ImageContentTask Include="Assets\sprite\reslut.jpg">
       <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug_Low|x64'">false</ExcludedFromBuild>
     </ImageContentTask>
