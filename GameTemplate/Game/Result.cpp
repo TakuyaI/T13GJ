@@ -12,18 +12,26 @@ Result::~Result()
 }
 bool Result::Start()
 {
+	m_spriteRender = NewGO<prefab::CSpriteRender>(0);
+	m_spriteRender->Init(L"sprite/reslut.dds", 1300.0f, 750.0f);
 	m_fontRender = NewGO<prefab::CFontRender>(0);
-	m_fontRender->SetText(L"Hello");
-	m_fontRender->SetPosition({ 500, 0 });
+	m_fontRender->SetText(L"スコア　P1");
+	m_position={ 700.0f,0.0f };
+	m_fontRender->SetPosition(m_position);
+
 	return true;
 
 }
 void Result::Update()
 {
-	/*if () {
-		//文字がスライドインしてくる処理
+	if (m_position.x <= 800.0f){
+		m_position.x -= 1.0f;
 	}
-	else if () {
+	if (m_position.x <= 300.0f) {
+		m_position.x = 300.0f;
+	}
+	/*else if () {
 		//2Dが上から落ちてくる処理。
 	}*/
+	m_fontRender->SetPosition(m_position);
 }
