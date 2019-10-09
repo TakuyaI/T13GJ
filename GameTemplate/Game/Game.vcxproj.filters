@@ -60,4 +60,7 @@
       <UniqueIdentifier>{d32074b3-7ead-46e6-9bdb-2dc5a2dc977a}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
+  <ItemGroup>
+    <Image Include="..\..\..\長野友哉\reslut.jpg" />
+  </ItemGroup>
 </Project>
