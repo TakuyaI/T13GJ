@@ -10,6 +10,7 @@
     <ImageContentTask Include="Assets\sprite\dummy.png">
       <Filter>Assets\sprite</Filter>
     </ImageContentTask>
+    <ImageContentTask Include="..\..\..\長野友哉\reslut.jpg" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="BackGround.cpp" />
@@ -22,6 +23,7 @@
     <ClCompile Include="stdafx.cpp" />
     <ClCompile Include="Title.cpp" />
     <ClCompile Include="Bullet.cpp" />
+    <ClCompile Include="Result.cpp" />
   </ItemGroup>
   <ItemGroup>
     <MeshContentTask Include="Assets\modelData\r.FBX">
@@ -54,6 +56,7 @@
     <ClInclude Include="stdafx.h" />
     <ClInclude Include="Title.h" />
     <ClInclude Include="Bullet.h" />
+    <ClInclude Include="Result.h" />
   </ItemGroup>
   <ItemGroup>
     <ResourceCompile Include="Game.rc" />
@@ -68,8 +71,5 @@
     <Filter Include="Assets\sprite">
       <UniqueIdentifier>{746e8257-6c61-4230-9c83-9c2653bd026e}</UniqueIdentifier>
     </Filter>
-  </ItemGroup>
-  <ItemGroup>
-    <Image Include="..\..\..\長野友哉\reslut.jpg" />
   </ItemGroup>
 </Project>
