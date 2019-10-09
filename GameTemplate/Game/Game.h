@@ -27,6 +27,7 @@ public:
 	CFont m_font;
 	int m_timer = 0;
 	int m_fontTiner = 10;
+	int m_score = 0;
 	
 };
 

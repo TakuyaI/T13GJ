@@ -65,10 +65,20 @@ void Game::PostRender(CRenderContext& rc)
 	m_font.Begin(rc);
 	m_font.Draw(
 		text,
-		{ 200.0f, -175.0f },
+		{ 0.0f, 300.0f },
 		{0.0f, 0.0f, 0.0f, 1.0f},
 		0.0f,
 		1.8f,
+		{ 0.0f, 1.0f }
+	);
+
+	swprintf_s(text, L"ÉXÉRÉA%d", m_score);
+	m_font.Draw(
+		text,
+		{ 400.0f, 250.0f },
+		{ 0.0f, 0.0f, 0.0f, 1.0f },
+		0.0f,
+		1.0f,
 		{ 0.0f, 1.0f }
 	);
 	m_font.End(rc);
