@@ -5,21 +5,31 @@
 #include "Enemy.h"
 #include "GameCamera.h"
 #include "Gun.h"
+#include "Result.h"
 #include "tkEngine/light/tkDirectionLight.h"
 
 Game::Game()
 {
-	NewGO<Player>(0, "player");
-	NewGO<BackGround>(0, "background");
-	NewGO<Enemy>(0, "enemy");
-	NewGO<GameCamera>(0, "gamecamera");
+	m_player = NewGO<Player>(0, "player");
+	m_bg = NewGO<BackGround>(0, "background");
+	m_enemy = NewGO<Enemy>(0, "enemy");
+	m_gc = NewGO<GameCamera>(0, "gamecamera");
 	m_gun[0] = NewGO<Gun>(0, "gun");
-
+	
 }
 
 
 Game::~Game()
 {
+	DeleteGO(m_player);
+	DeleteGO(m_bg);
+	DeleteGO(m_enemy);
+	DeleteGO(m_gc);
+	QueryGOs<Gun>("gun", [](Gun * gun)->bool
+		{
+			DeleteGO(gun);
+			return true;
+		});
 }
 bool Game::Start()
 {
@@ -36,5 +46,9 @@ bool Game::Start()
 
 void Game::Update()
 {
-
+	m_timer++;
+	if (m_timer == 180) {
+		NewGO<Result>(0, "result");
+			DeleteGO(this);
+	}
 }
