@@ -20,7 +20,8 @@ bool Result::Start()
 	m_fontRender->SetText(L"スコア　P1");
 	m_position={ 700.0f,0.0f };
 	m_fontRender->SetPosition(m_position);
-
+	//m_Score = FindGO<Game>("game");
+	//m_score = m_Score->m_score;
 	return true;
 
 }
@@ -28,7 +29,7 @@ bool Result::Start()
 void Result::PostRender(CRenderContext& rc)
 {
 	wchar_t text[256];
-	swprintf_s(text, L"%d", Score);
+	swprintf_s(text, L"%d", m_score);
 	m_font.Begin(rc);
 	m_font.Draw(
 		text,
@@ -54,7 +55,6 @@ void Result::Update()
 	}*/
 	if (m_position.x == 300.0f && Pad(0).IsTrigger(enButtonStart)) {
 		NewGO<Title>(1);
-
 		DeleteGO(this);
 	}
 	m_fontRender->SetPosition(m_position);
