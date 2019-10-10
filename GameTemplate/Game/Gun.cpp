@@ -9,6 +9,7 @@ Gun::Gun()
 
 Gun::~Gun()
 {
+	DeleteGO(m_skinmodelRender);
 }
 
 bool Gun::Start()

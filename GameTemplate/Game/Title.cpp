@@ -26,7 +26,7 @@ void Title::Update()
 {
 	if (Pad(0).IsPress(enButtonA))
 	{
-		NewGO<Game>(0);
+		NewGO<Game>(0, "game");
 		prefab::CSoundSource* sound = NewGO<prefab::CSoundSource>(0);
 		sound->Init( L"sound/saezuri.wav");
 		sound->Play(false);
