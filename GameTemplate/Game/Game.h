@@ -28,7 +28,7 @@ public:
 
 	CFont m_font;
 	int m_timer = 0;
-	int m_fontTiner = 60;
+	int m_fontTiner = 30;
 	int m_score = 0;
 	int m_playerBullet = 50;
 	
