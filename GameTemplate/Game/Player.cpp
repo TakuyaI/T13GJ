@@ -83,5 +83,22 @@ void Player::Update()
 		}
 	});
 
-	
+
+	//if (m_game->m_playerBullet < 50) {
+	//	PhysicsWorld().ContactTest(m_charaCon, [&](const btCollisionObject & contactObject) {
+	//		if (m_ghostObject.IsSelf(contactObject) == true) {
+	//			//m_ghostObject‚Æ‚Ô‚Â‚©‚Á‚½
+	//			if (Pad(0).IsPress(enButtonA)) {
+	//				m_flag = 1;
+	//				m_bulletTimer++;
+	//				if (m_bulletTimer == 120) {
+	//					m_game->m_playerBullet = 50;
+	//					m_bulletTimer = 0;
+	//				}
+	//				m_flag = 0;
+	//			}
+	//		}
+	//		m_bulletTimer = 0;
+	//	});
+	//}
 }
