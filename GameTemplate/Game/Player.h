@@ -20,12 +20,12 @@ public:
 	Game* m_game;
 
 	prefab::CSkinModelRender* m_skinModelRender = nullptr;		//スキンモデルレンダラー。
-	CVector3 m_position = CVector3::Zero;
-	CVector3 m_moveSpeed = CVector3::Zero;
-	CPhysicsGhostObject m_ghostObject;
-	CCharacterController m_charaCon;
-	int m_timer = 0;
-	int m_bulletTimer = 0;
-	int m_flag = 0;
+	CVector3 m_position = CVector3::Zero;//座標。
+	CVector3 m_moveSpeed = CVector3::Zero;//速度。
+	CPhysicsGhostObject m_ghostObject;//ゴースト。
+	CCharacterController m_charaCon;//キャラコン。
+	int m_timer = 0;//タイマー。
+	int m_bulletTimer = 0;//弾のインターバル。
+	int m_flag = 0;//フラグ。
 };
 

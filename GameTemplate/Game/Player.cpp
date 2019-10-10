@@ -12,6 +12,7 @@ Player::~Player()
 	DeleteGO(m_skinModelRender);
 }
 
+//ゴーストの初期化。
 void Player::InitGhostObject()
 {
 	//ゴーストのワイヤーフレーム表示を有効にする
@@ -30,6 +31,7 @@ bool Player::Start()
 {
 	m_bg = FindGO<BackGround>("background");
 	m_game = FindGO<Game>("game");
+
 	m_skinModelRender = NewGO<prefab::CSkinModelRender>(0);
 	m_skinModelRender->Init(L"modelData/unityChan.cmo");
 
@@ -37,6 +39,7 @@ bool Player::Start()
 	m_skinModelRender->SetPosition(m_position);
 	m_charaCon.Init(50.0f, 100.0f, m_position);
 
+	//ゴーストの初期化。
 	InitGhostObject();
 
 	return true;
@@ -80,5 +83,22 @@ void Player::Update()
 		}
 	});
 
-	
+
+	//if (m_game->m_playerBullet < 50) {
+	//	PhysicsWorld().ContactTest(m_charaCon, [&](const btCollisionObject & contactObject) {
+	//		if (m_ghostObject.IsSelf(contactObject) == true) {
+	//			//m_ghostObjectとぶつかった
+	//			if (Pad(0).IsPress(enButtonA)) {
+	//				m_flag = 1;
+	//				m_bulletTimer++;
+	//				if (m_bulletTimer == 120) {
+	//					m_game->m_playerBullet = 50;
+	//					m_bulletTimer = 0;
+	//				}
+	//				m_flag = 0;
+	//			}
+	//		}
+	//		m_bulletTimer = 0;
+	//	});
+	//}
 }
