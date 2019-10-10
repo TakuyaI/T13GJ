@@ -20,8 +20,8 @@ bool Result::Start()
 	m_fontRender->SetText(L"スコア　P1");
 	m_position={ 700.0f,0.0f };
 	m_fontRender->SetPosition(m_position);
-	//m_Score = FindGO<Game>("game");
-	//m_score = m_Score->m_score;
+	m_Score = FindGO<Game>("game");
+	m_score = m_Score->m_score;
 	return true;
 
 }

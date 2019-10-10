@@ -8,6 +8,7 @@
 #include "Gun.h"
 #include "Result.h"
 #include "Bullet.h"
+#include "Title.h"
 #include "tkEngine/light/tkDirectionLight.h"
 
 Game::Game()
@@ -47,14 +48,27 @@ bool Game::Start()
 
 void Game::Update()
 {
-	m_timer++;
-	if (m_timer == 60) {
-		m_fontTiner--;
-		m_timer = 0;
+	if (m_flag == 0) {
+		m_timer++;
+		if (m_timer == 60) {
+			m_fontTiner--;
+			m_timer = 0;
+		}
 	}
+
 	if (m_fontTiner < 0) {
 		NewGO<Result>(1, "result");
-			DeleteGO(this);
+		//m_result->m_score = m_score;
+		//DeleteGO(this);
+		m_flag = 1;
+		m_fontTiner = 10;
+	}
+
+	if (Pad(0).IsPress(enButtonStart)) {
+		if (m_flag == 0) {
+			NewGO<Title>(1, "title");
+		}
+		DeleteGO(this);
 	}
 }
 

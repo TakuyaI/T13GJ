@@ -33,6 +33,6 @@ public:
 	int m_fontTiner = 30;
 	int m_score = 0;
 	int m_playerBullet = 50;
-	
+	int m_flag = 0;
 };
 
