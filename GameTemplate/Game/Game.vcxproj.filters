@@ -11,6 +11,7 @@
       <Filter>Assets\sprite</Filter>
     </ImageContentTask>
     <ImageContentTask Include="Assets\sprite\reslut.jpg" />
+    <ImageContentTask Include="Assets\sprite\clear.jpg" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="BackGround.cpp" />
