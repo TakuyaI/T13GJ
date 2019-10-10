@@ -14,6 +14,7 @@ public:
 	Game* m_Score;
 	prefab::CSpriteRender* m_spriteRender = nullptr;
 	prefab::CSpriteRender* spriteRender = nullptr;
+	CVector3 position = CVector3::Zero;
 	prefab::CFontRender* m_fontRender = nullptr;
 	CVector2 m_position = CVector2::Zero;
 	int m_score = 0;

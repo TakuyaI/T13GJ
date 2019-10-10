@@ -8,6 +8,7 @@
 #include "Gun.h"
 #include "Result.h"
 #include "Bullet.h"
+#include "EnemyBullet.h"
 #include "Title.h"
 #include "tkEngine/light/tkDirectionLight.h"
 
@@ -99,6 +100,26 @@ void Game::PostRender(CRenderContext& rc)
 	m_font.Draw(
 		text,
 		{ 400.0f, 200.0f },
+		{ 0.0f, 0.0f, 0.0f, 1.0f },
+		0.0f,
+		1.0f,
+		{ 0.0f, 1.0f }
+	);
+
+	swprintf_s(text, L"ƒXƒRƒA%d", m_enescore);
+	m_font.Draw(
+		text,
+		{ -600.0f, 250.0f },
+		{ 0.0f, 0.0f, 0.0f, 1.0f },
+		0.0f,
+		1.0f,
+		{ 0.0f, 1.0f }
+	);
+
+	swprintf_s(text, L"’e”%d", m_enemy->m_enemybullet);
+	m_font.Draw(
+		text,
+		{ -600.0f, 200.0f },
 		{ 0.0f, 0.0f, 0.0f, 1.0f },
 		0.0f,
 		1.0f,
