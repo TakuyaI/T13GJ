@@ -16,9 +16,9 @@ Result::~Result()
 bool Result::Start()
 {
 	m_spriteRender = NewGO<prefab::CSpriteRender>(0);
-	m_spriteRender->Init(L"sprite/reslut.dds", 1300.0f, 750.0f);
+	m_spriteRender->Init(L"sprite/taitoru.dds", 1300.0f, 750.0f);
 	spriteRender = NewGO<prefab::CSpriteRender>(0);
-	spriteRender->Init(L"sprite/clear.dds", 770.0f, 100.0f);
+	spriteRender->Init(L"sprite/gameclear.dds", 770.0f, 100.0f);
 	position = { 0.0f,125.0f,0.0f };
 	spriteRender->SetPosition(position);
 	m_fontRender = NewGO<prefab::CFontRender>(0);
