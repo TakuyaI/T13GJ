@@ -4,6 +4,7 @@
 #include "Bullet.h"
 #include "EnemyGun.h"
 #include "EnemyBullet.h"
+#include "Game.h"
 
 
 Enemy::Enemy()
