@@ -11,13 +11,16 @@ Result::~Result()
 {
 	DeleteGO(m_spriteRender);
 	DeleteGO(m_fontRender);
+	DeleteGO(spriteRender);
 }
 bool Result::Start()
 {
 	m_spriteRender = NewGO<prefab::CSpriteRender>(0);
 	m_spriteRender->Init(L"sprite/reslut.dds", 1300.0f, 750.0f);
 	spriteRender = NewGO<prefab::CSpriteRender>(0);
-	spriteRender->Init(L"sprite/clear.dds", 500.0f, 300.0f);
+	spriteRender->Init(L"sprite/clear.dds", 770.0f, 100.0f);
+	position = { 0.0f,125.0f,0.0f };
+	spriteRender->SetPosition(position);
 	m_fontRender = NewGO<prefab::CFontRender>(0);
 	m_fontRender->SetText(L"スコア　P1");
 	m_position={ 700.0f,0.0f };
