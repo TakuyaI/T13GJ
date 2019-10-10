@@ -1,5 +1,6 @@
 #include "stdafx.h"
 #include "EnemyBullet.h"
+#include "Player.h"
 
 
 EnemyBullet::EnemyBullet()
@@ -9,6 +10,7 @@ EnemyBullet::EnemyBullet()
 
 EnemyBullet::~EnemyBullet()
 {
+	DeleteGO(m_skinModelRender);
 }
 bool EnemyBullet::Start()
 {
@@ -32,13 +34,18 @@ void EnemyBullet::Update()
 		DeleteGO(this);
 	}
 
-	CVector3 v1 = m_position - m_enemy->m_position;
+	CVector3 diff = FindGO<Player>("player")->m_position - m_position;
+	if (diff.Length() < 70.0f) {
+		m_game->m_enescore++;
+		DeleteGO(this);
+	}
+	/*CVector3 v1 = m_position - m_enemy->m_position;
 	if (v1.Length() < 70.0f) {
 		DeleteGO(this);
 	}
 	CVector3 v2 = m_position - m_player->m_position;
 	if (v2.Length() < 70.0f) {
-		//m_game->m_score++;
+		m_game->m_enescore++;
 		DeleteGO(this);
-	}
+	}*/
 }
