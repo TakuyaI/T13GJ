@@ -11,6 +11,7 @@ Result::~Result()
 {
 	DeleteGO(m_spriteRender);
 	DeleteGO(m_fontRender);
+	DeleteGO(spriteRender);
 }
 bool Result::Start()
 {
