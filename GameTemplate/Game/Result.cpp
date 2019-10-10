@@ -24,6 +24,23 @@ bool Result::Start()
 	return true;
 
 }
+
+void Result::PostRender(CRenderContext& rc)
+{
+	wchar_t text[256];
+	swprintf_s(text, L"%d", Score);
+	m_font.Begin(rc);
+	m_font.Draw(
+		text,
+		{ 350.0f, 0.0f },
+		{ 0.0f, 0.0f, 0.0f, 1.0f },
+		0.0f,
+		1.8f,
+		{ 0.0f, 1.0f }
+	);
+	m_font.End(rc);
+}
+
 void Result::Update()
 {
 	if (m_position.x <= 800.0f){
@@ -36,7 +53,7 @@ void Result::Update()
 		//2D‚ªã‚©‚ç—Ž‚¿‚Ä‚­‚éˆ—B
 	}*/
 	if (m_position.x == 300.0f && Pad(0).IsTrigger(enButtonStart)) {
-		NewGO<Title>(0);
+		NewGO<Title>(1);
 
 		DeleteGO(this);
 	}

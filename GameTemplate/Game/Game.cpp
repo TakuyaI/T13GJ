@@ -53,7 +53,7 @@ void Game::Update()
 		m_timer = 0;
 	}
 	if (m_fontTiner < 0) {
-		NewGO<Result>(0, "result");
+		NewGO<Result>(1, "result");
 			DeleteGO(this);
 	}
 }
