@@ -35,6 +35,11 @@ void Result::Update()
 	/*else if () {
 		//2D‚ªã‚©‚ç—‚¿‚Ä‚­‚éˆ—B
 	}*/
+	if (m_position.x == 300.0f && Pad(0).IsTrigger(enButtonStart)) {
+		NewGO<Title>(0);
+
+		DeleteGO(this);
+	}
 	m_fontRender->SetPosition(m_position);
 	
 }
