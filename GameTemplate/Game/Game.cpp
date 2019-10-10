@@ -58,8 +58,6 @@ void Game::Update()
 
 	if (m_fontTiner < 0) {
 		NewGO<Result>(1, "result");
-		//m_result->m_score = m_score;
-		//DeleteGO(this);
 		m_flag = 1;
 		m_fontTiner = 10;
 	}
