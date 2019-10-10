@@ -25,6 +25,7 @@
     <ClCompile Include="Bullet.cpp" />
     <ClCompile Include="Result.cpp" />
     <ClCompile Include="EnemyGun.cpp" />
+    <ClCompile Include="EnemyBullet.cpp" />
   </ItemGroup>
   <ItemGroup>
     <MeshContentTask Include="Assets\modelData\r.FBX">
@@ -59,6 +60,7 @@
     <ClInclude Include="Bullet.h" />
     <ClInclude Include="Result.h" />
     <ClInclude Include="EnemyGun.h" />
+    <ClInclude Include="EnemyBullet.h" />
   </ItemGroup>
   <ItemGroup>
     <ResourceCompile Include="Game.rc" />

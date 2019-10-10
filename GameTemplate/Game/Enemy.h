@@ -14,5 +14,8 @@ public:
 	CVector3 m_position = CVector3::Zero;				//ポジション
 	CCharacterController enechara;						//キャラコン
 	int attack = 0;			//攻撃
+	int m_timer = 0;		//タイマー
+	int m_enemybullet = 50;	//弾数
+	int hani = 0;
 };
 
