@@ -1,6 +1,6 @@
 #include "stdafx.h"
 #include "Result.h"
-
+#include "Title.h"
 
 Result::Result()
 {
@@ -9,6 +9,8 @@ Result::Result()
 
 Result::~Result()
 {
+	DeleteGO(m_spriteRender);
+	DeleteGO(m_fontRender);
 }
 bool Result::Start()
 {
@@ -34,4 +36,5 @@ void Result::Update()
 		//2D‚ªã‚©‚ç—Ž‚¿‚Ä‚­‚éˆ—B
 	}*/
 	m_fontRender->SetPosition(m_position);
+	
 }
