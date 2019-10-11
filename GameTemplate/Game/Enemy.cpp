@@ -15,6 +15,11 @@ Enemy::Enemy()
 Enemy::~Enemy()
 {
 	DeleteGO(m_skinModelRender);
+	QueryGOs<EnemyBullet>("enemybullet", [](EnemyBullet * enemybullet)->bool
+		{
+			DeleteGO(enemybullet);
+			return true;
+		});
 }
 
 bool Enemy::Start()
@@ -88,8 +93,6 @@ void Enemy::Move()
 }
 void Enemy::Attack()
 {
-	//プレイヤーとの距離が1000以下になったら、
-	//弾を打つ
 	/*CVector3 diff = FindGO<Player>("player")->m_position - m_position;
 	float ppsx = FindGO<Player>("player")->m_position.x;
 	if (diff.Length() < 1000.0f) {
@@ -101,14 +104,19 @@ void Enemy::Attack()
 			m_enemybullet--;
 		}
 	}*/
+	//プレイヤーとのｘ座標の距離が50以下、距離が3150になったら、
+	//弾を打つ
 	float ppsx = FindGO<Player>("player")->m_position.x;
+	CVector3 diff = FindGO<Player>("player")->m_position - m_position;
 	if (ppsx - 50.0f < m_position.x && m_position.x < ppsx + 50.0f){
-		if (m_timer >= 10 && m_enemybullet > 0) {
-			EnemyBullet* m_enebullet = NewGO<EnemyBullet>(0, "enemyBullet");
-			m_enebullet->m_position = FindGO<EnemyGun>("enemygun")->m_position;
-			m_enebullet->m_moveSpeed.z = -50.0f;
-			m_timer = 0;
-			m_enemybullet--;
+		if (diff.Length() < 3150.0f) {
+			if (m_timer >= 10 && m_enemybullet > 0) {
+				EnemyBullet* m_enebullet = NewGO<EnemyBullet>(0, "enemybullet");
+				m_enebullet->m_position = FindGO<EnemyGun>("enemygun")->m_position;
+				m_enebullet->m_moveSpeed.z = -50.0f;
+				m_timer = 0;
+				m_enemybullet--;
+			}
 		}
 	}
 	
