@@ -3,6 +3,7 @@
 #include "Bullet.h"
 #include "BackGround.h"
 #include "Game.h"
+
 class Bullet;
 class BackGround;
 class Player : public IGameObject
