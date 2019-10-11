@@ -11,7 +11,9 @@ Result::~Result()
 {
 	DeleteGO(m_spriteRender);
 	DeleteGO(m_fontRender);
+	DeleteGO(fontRender);
 	DeleteGO(spriteRender);
+	DeleteGO(n_priteRender);
 }
 bool Result::Start()
 {
@@ -89,7 +91,7 @@ void Result::Update()
 			}
 			if (position.y <= 125.0f) {
 				position.y = 125.0f;
-				
+				spriteRender->SetPosition(position);//クリア
 			}
 	}
 	else if (heikou.x == 360.0f && tousoku.x == 360.0f && m_enescore > m_score) {
@@ -98,15 +100,13 @@ void Result::Update()
 		}
 		if (n_position.y <= 125.0f) {
 			n_position.y = 125.0f;
-			
+			n_priteRender->SetPosition(n_position);//オーバー
 		}
 	}
 	if (m_position.x == 300.0f && Pad(0).IsTrigger(enButtonStart)) {
-		NewGO<Title>(1);
-		DeleteGO(this);
+		NewGO<Title>(1);//タイトル作成
+		DeleteGO(this);//リザルトで表示しているやつ全削除
 	}
-	m_fontRender->SetPosition(m_position);
-	fontRender->SetPosition(m_2position);
-	spriteRender->SetPosition(position);//クリア
-	n_priteRender->SetPosition(n_position);//オーバー
+	m_fontRender->SetPosition(m_position);//P1に座標を与える。
+	fontRender->SetPosition(m_2position);//P2に座標を与える。
 }
