@@ -9,6 +9,8 @@ BackGround::BackGround()
 
 BackGround::~BackGround()
 {
+	DeleteGO(m_skinModelRender);
+
 }
 
 
