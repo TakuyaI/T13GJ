@@ -17,6 +17,7 @@ public:
 	int attack = 0;			//攻撃
 	int m_timer = 0;		//タイマー
 	int m_enemybullet = 50;
-	int hani = 0;
+	//int hani = 0;
+	//float pposix = FindGO<Player>("player")->m_position.x;
 };
 
