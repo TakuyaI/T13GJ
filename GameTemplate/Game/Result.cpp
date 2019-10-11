@@ -9,38 +9,47 @@ Result::Result()
 
 Result::~Result()
 {
-	DeleteGO(m_spriteRender);
-	DeleteGO(m_fontRender);
-	DeleteGO(fontRender);
-	DeleteGO(spriteRender);
-	DeleteGO(n_priteRender);
+	DeleteGO(m_spriteRender);//リザルト画面の削除
+	DeleteGO(m_fontRender);//P1描画の削除
+	DeleteGO(fontRender);//P2描画の削除
+	DeleteGO(spriteRender);//ゲームクリアの削除
+	DeleteGO(n_priteRender);//ゲームオーバーの削除
+	DeleteGO(s_spriteRender);//ナイス
 }
 bool Result::Start()
 {
+	//リザルト画面の作成
 	m_spriteRender = NewGO<prefab::CSpriteRender>(0);
 	m_spriteRender->Init(L"sprite/taitoru.dds", 1300.0f, 750.0f);
-
+	//ゲームクリアの作成
 	spriteRender = NewGO<prefab::CSpriteRender>(0);
 	spriteRender->Init(L"sprite/gameclear.dds", 770.0f, 100.0f);
-	position = { 0.0f,450.0f,0.0f };
-	spriteRender->SetPosition(position);
-
+	position = { 0.0f,450.0f,0.0f };//座標
+	spriteRender->SetPosition(position);//与える。
+	//ゲームオーバーの作成
 	n_priteRender = NewGO<prefab::CSpriteRender>(0);
 	n_priteRender->Init(L"sprite/gameover.dds", 770.0f, 100.0f);
-	n_position = { 0.0f,450.0f,0.0f };
-	n_priteRender->SetPosition(n_position);
+	n_position = { 0.0f,450.0f,0.0f };//座標
+	n_priteRender->SetPosition(n_position);//与える
+	//ナイス
+	s_spriteRender = NewGO<prefab::CSpriteRender>(0);
+	s_spriteRender->Init(L"sprite/nice.dds", 770.0f, 400.0f);
+	s_position = { -300.0f,-550.0f,0.0f };//座標
+	s_spriteRender->SetPosition(s_position);//与える
 
 	m_fontRender = NewGO<prefab::CFontRender>(0);
 	m_fontRender->SetText(L"スコア　P1");
 	m_position={ 300.0f,0.0f };
 	m_fontRender->SetPosition(m_position);
+
 	fontRender = NewGO<prefab::CFontRender>(0);
 	fontRender->SetText(L"スコア　P2");
 	m_2position = { 300.0f,-170.0f };
 	fontRender->SetPosition(m_2position);
-	m_Score = FindGO<Game>("game");
-	m_score = m_Score->m_score;
-	m_enescore = m_Score->m_enescore;
+
+	m_Score = FindGO<Game>("game");//ゲーム.cppからスコアを探す
+	m_score = m_Score->m_score;//操作する方のスコア
+	m_enescore = m_Score->m_enescore;//敵のスコア
 	return true;
 
 }
@@ -92,6 +101,15 @@ void Result::Update()
 			if (position.y <= 125.0f) {
 				position.y = 125.0f;
 				spriteRender->SetPosition(position);//クリア
+				if (position.y == 125.0f) {
+					if (s_position.y <= -550.0f) {
+						s_position.y += 10.0f;
+					}
+					if (s_position.y <= 150.0f) {
+						s_position.y = -150.0f;
+						s_spriteRender->SetPosition(s_position);
+					}
+				}
 			}
 	}
 	else if (heikou.x == 360.0f && tousoku.x == 360.0f && m_enescore > m_score) {

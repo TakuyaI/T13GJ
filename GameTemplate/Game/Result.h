@@ -16,8 +16,13 @@ public:
 	prefab::CSpriteRender* m_spriteRender = nullptr;//リザルト画面
 	prefab::CSpriteRender* spriteRender = nullptr;//ゲームクリアのやつ
 	CVector3 position = CVector3::Zero;//ゲームクリアのポジション
+
 	prefab::CSpriteRender* n_priteRender = nullptr;//ゲームオーバー
 	CVector3 n_position = CVector3::Zero;//ゲームオーバーのポジション
+
+	prefab::CSpriteRender* s_spriteRender = nullptr;//ナイス
+	CVector3 s_position = CVector3::Zero;//ナイスのポジション
+
 	prefab::CFontRender* m_fontRender = nullptr;//P1
 	prefab::CFontRender* fontRender = nullptr;//P2
 	CVector2 m_position = CVector2::Zero;
