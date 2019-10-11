@@ -127,3 +127,4 @@ void Game::PostRender(CRenderContext& rc)
 	);
 	m_font.End(rc);
 }
+

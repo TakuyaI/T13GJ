@@ -16,15 +16,19 @@ Result::~Result()
 bool Result::Start()
 {
 	m_spriteRender = NewGO<prefab::CSpriteRender>(0);
-	m_spriteRender->Init(L"sprite/reslut.dds", 1300.0f, 750.0f);
+	m_spriteRender->Init(L"sprite/taitoru.dds", 1300.0f, 750.0f);
 	spriteRender = NewGO<prefab::CSpriteRender>(0);
-	spriteRender->Init(L"sprite/clear.dds", 770.0f, 100.0f);
+	spriteRender->Init(L"sprite/gameclear.dds", 770.0f, 100.0f);
 	position = { 0.0f,125.0f,0.0f };
 	spriteRender->SetPosition(position);
 	m_fontRender = NewGO<prefab::CFontRender>(0);
 	m_fontRender->SetText(L"スコア　P1");
 	m_position={ 700.0f,0.0f };
 	m_fontRender->SetPosition(m_position);
+	fontRender = NewGO<prefab::CFontRender>(0);
+	fontRender->SetText(L"スコア　P2");
+	m_2position = { 700.0f,-200.0f };
+	fontRender->SetPosition(m_2position);
 	m_Score = FindGO<Game>("game");
 	m_score = m_Score->m_score;
 	return true;
@@ -55,6 +59,12 @@ void Result::Update()
 	if (m_position.x <= 300.0f) {
 		m_position.x = 300.0f;
 	}
+	if (m_2position.x <= 800.0f) {
+		m_2position.x -= 10.0f;
+	}
+	if (m_2position.x <= 300.0f) {
+		m_2position.x = 300.0f;
+	}
 	/*else if () {
 		//2Dが上から落ちてくる処理。
 	}*/
@@ -63,5 +73,6 @@ void Result::Update()
 		DeleteGO(this);
 	}
 	m_fontRender->SetPosition(m_position);
+	fontRender->SetPosition(m_2position);
 	
 }

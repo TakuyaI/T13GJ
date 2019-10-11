@@ -1831,12 +1831,10 @@
     <ImageContentTask Include="Assets\sprite\mizugassen.jpg" />
   </ItemGroup>
   <ItemGroup>
-    <ImageContentTask Include="Assets\sprite\reslut.jpg">
-      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug_Low|x64'">false</ExcludedFromBuild>
-    </ImageContentTask>
+    <ImageContentTask Include="Assets\sprite\gameclear.png" />
   </ItemGroup>
   <ItemGroup>
-    <ImageContentTask Include="Assets\sprite\clear.jpg" />
+    <ImageContentTask Include="Assets\sprite\taitoru.png" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

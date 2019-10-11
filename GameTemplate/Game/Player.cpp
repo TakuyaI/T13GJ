@@ -95,8 +95,9 @@ void Player::Update()
 	//					m_game->m_playerBullet = 50;
 	//					m_bulletTimer = 0;
 	//				}
-	//				m_flag = 0;
+	//				
 	//			}
+	//			m_flag = 0;
 	//		}
 	//		m_bulletTimer = 0;
 	//	});
