@@ -34,8 +34,8 @@ void EnemyBullet::Update()
 		DeleteGO(this);
 	}
 
-	CVector3 diff = FindGO<Player>("player")->m_position - m_position;
-	if (diff.Length() < 70.0f) {
+	CVector3 diff = m_player->m_position - m_position;
+	if (diff.Length() < 100.0f) {
 		m_game->m_enescore++;
 		DeleteGO(this);
 	}
