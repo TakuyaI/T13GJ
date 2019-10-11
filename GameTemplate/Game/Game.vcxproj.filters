@@ -12,6 +12,7 @@
     </ImageContentTask>
     <ImageContentTask Include="Assets\sprite\gameclear.png" />
     <ImageContentTask Include="Assets\sprite\taitoru.png" />
+    <ImageContentTask Include="Assets\sprite\gameover.png" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="BackGround.cpp" />
