@@ -19,7 +19,7 @@ bool Result::Start()
 	m_spriteRender->Init(L"sprite/taitoru.dds", 1300.0f, 750.0f);
 	spriteRender = NewGO<prefab::CSpriteRender>(0);
 	spriteRender->Init(L"sprite/gameclear.dds", 770.0f, 100.0f);
-	position = { 0.0f,125.0f,0.0f };
+	position = { 0.0f,450.0f,0.0f };
 	spriteRender->SetPosition(position);
 	m_fontRender = NewGO<prefab::CFontRender>(0);
 	m_fontRender->SetText(L"スコア　P1");
@@ -76,14 +76,21 @@ void Result::Update()
 	if (tousoku.x <= 360.0f) {
 		tousoku.x = 360.0f;
 	}
-	/*else if () {
-		//2Dが上から落ちてくる処理。
-	}*/
+	if (heikou.x== 360.0f && tousoku.x == 360.0f) {
+			if (position.y<= 500.0f){
+				position.y -= 10.0f;
+			}
+			if (position.y <= 125.0f) {
+				position.y = 125.0f;
+				
+			}
+	}
 	if (m_position.x == 300.0f && Pad(0).IsTrigger(enButtonStart)) {
 		NewGO<Title>(1);
 		DeleteGO(this);
 	}
 	m_fontRender->SetPosition(m_position);
+	spriteRender->SetPosition(position);
 	fontRender->SetPosition(m_2position);
 	
 }
