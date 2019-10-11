@@ -48,13 +48,13 @@ void Enemy::Move()
 {
 	//左右移動
 	float pposix= FindGO<Player>("player")->m_position.x;
-	/*if (pposix-100.0f > m_position.x) {
+	if (pposix/*-100.0f*/ > m_position.x) {
 		m_position.x += 5.0f;
 	}
-	if (pposix+100.0f < m_position.x) {
+	if (pposix/*+100.0f*/ < m_position.x) {
 		m_position.x -= 5.0f;
-	}*/
-	if (hani ==0 && m_position.x>pposix-200.0f){
+	}
+	/*if (hani ==0 && m_position.x>pposix-200.0f){
 		m_position.x -= 5.0f;
 	}
 
@@ -66,7 +66,7 @@ void Enemy::Move()
 	}
 	if (m_position.x >= pposix + 200.0f) {
 		hani = 0;
-	}
+	}*/
 
 	//奥行方向
 	float pposiz = FindGO<Player>("player")->m_position.z;
@@ -90,13 +90,26 @@ void Enemy::Attack()
 {
 	//プレイヤーとの距離が1000以下になったら、
 	//弾を打つ
-	CVector3 diff = FindGO<Player>("player")->m_position - m_position;
-	if (diff.Length() < 1000.0f && m_timer >= 10 && m_enemybullet > 0) {
-		EnemyBullet* m_enebullet = NewGO<EnemyBullet>(0, "enemyBullet");
-		m_enebullet->m_position = FindGO<EnemyGun>("enemygun")->m_position;
-		m_enebullet->m_moveSpeed.z = -50.0f;
-		m_timer = 0;
-		m_enemybullet--;
+	/*CVector3 diff = FindGO<Player>("player")->m_position - m_position;
+	float ppsx = FindGO<Player>("player")->m_position.x;
+	if (diff.Length() < 1000.0f) {
+		if (m_timer >= 10 && m_enemybullet > 0) {
+			EnemyBullet* m_enebullet = NewGO<EnemyBullet>(0, "enemyBullet");
+			m_enebullet->m_position = FindGO<EnemyGun>("enemygun")->m_position;
+			m_enebullet->m_moveSpeed.z = -50.0f;
+			m_timer = 0;
+			m_enemybullet--;
+		}
+	}*/
+	float ppsx = FindGO<Player>("player")->m_position.x;
+	if (ppsx - 50.0f < m_position.x && m_position.x < ppsx + 50.0f){
+		if (m_timer >= 10 && m_enemybullet > 0) {
+			EnemyBullet* m_enebullet = NewGO<EnemyBullet>(0, "enemyBullet");
+			m_enebullet->m_position = FindGO<EnemyGun>("enemygun")->m_position;
+			m_enebullet->m_moveSpeed.z = -50.0f;
+			m_timer = 0;
+			m_enemybullet--;
+		}
 	}
 	
 
