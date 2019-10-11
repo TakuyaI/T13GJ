@@ -17,10 +17,17 @@ bool Result::Start()
 {
 	m_spriteRender = NewGO<prefab::CSpriteRender>(0);
 	m_spriteRender->Init(L"sprite/taitoru.dds", 1300.0f, 750.0f);
+
 	spriteRender = NewGO<prefab::CSpriteRender>(0);
 	spriteRender->Init(L"sprite/gameclear.dds", 770.0f, 100.0f);
 	position = { 0.0f,450.0f,0.0f };
 	spriteRender->SetPosition(position);
+
+	n_priteRender = NewGO<prefab::CSpriteRender>(0);
+	n_priteRender->Init(L"sprite/gameover.dds", 770.0f, 100.0f);
+	n_position = { 0.0f,450.0f,0.0f };
+	n_priteRender->SetPosition(n_position);
+
 	m_fontRender = NewGO<prefab::CFontRender>(0);
 	m_fontRender->SetText(L"スコア　P1");
 	m_position={ 300.0f,0.0f };
@@ -76,7 +83,7 @@ void Result::Update()
 	if (tousoku.x <= 360.0f) {
 		tousoku.x = 360.0f;
 	}
-	if (heikou.x== 360.0f && tousoku.x == 360.0f) {
+	if (heikou.x== 360.0f && tousoku.x == 360.0f && m_score > m_enescore) {
 			if (position.y<= 500.0f){
 				position.y -= 10.0f;
 			}
@@ -85,12 +92,21 @@ void Result::Update()
 				
 			}
 	}
+	else if (heikou.x == 360.0f && tousoku.x == 360.0f && m_enescore > m_score) {
+		if (n_position.y <= 500.0f) {
+			n_position.y -= 10.0f;
+		}
+		if (n_position.y <= 125.0f) {
+			n_position.y = 125.0f;
+			
+		}
+	}
 	if (m_position.x == 300.0f && Pad(0).IsTrigger(enButtonStart)) {
 		NewGO<Title>(1);
 		DeleteGO(this);
 	}
 	m_fontRender->SetPosition(m_position);
-	spriteRender->SetPosition(position);
 	fontRender->SetPosition(m_2position);
-	
+	spriteRender->SetPosition(position);//クリア
+	n_priteRender->SetPosition(n_position);//オーバー
 }
