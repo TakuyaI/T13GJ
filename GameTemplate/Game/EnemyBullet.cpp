@@ -17,7 +17,7 @@ bool EnemyBullet::Start()
 	m_enegun = FindGO<EnemyGun>("enemygun");
 	m_player = FindGO<Player>("player");
 	m_enemy = FindGO<Enemy>("enemy");
-	m_game = FindGO<Game>("game");
+	m_game = FindGO<Game>("game",false);
 	m_skinModelRender = NewGO<prefab::CSkinModelRender>(0);
 	m_skinModelRender->Init(L"modelData/tama.cmo");
 	m_position = m_enegun->m_position;
